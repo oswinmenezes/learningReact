@@ -2,7 +2,7 @@ import Navbar from "./components/navbar"
 import DisplayItems from "./components/displayItems"
 import CardCollection from "./components/displayCategory"
 import Cart from "./components/cart"
-import Footer from "./components/footer"
+
 import { useState } from "react"
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
 
   const groceries=["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
   const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]
-  const electronics=["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank"] 
+  const electronics=["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank","Table Fan","Ac for csds"] 
   
   return <div>
     <Navbar setCartVisibility={setCartVisibility} cartVisibility={cartVisibility} />
@@ -24,6 +24,7 @@ export default function App() {
     {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} cartitems={cartitems} setcartitems={setcartitems} /> : null}
 
     {cartVisibility ? <Cart cartList={cartitems} setcartitems={setcartitems} /> : null}
-    <Footer />
+
+    
   </div>
 }

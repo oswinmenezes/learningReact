@@ -16,7 +16,6 @@ export default function DisplayItems({ list, listType, cartitems, setcartitems }
                         <div className="itemName">{value}</div>
                         <div className="itemBtns">
                             <button onClick={() => addItem(value)}>Add</button>
-                            <button onClick={() => removeItem(value)}>Remove</button>
                         </div>
                     </div>
                 })

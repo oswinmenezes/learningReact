@@ -1,4 +1,5 @@
 export default function Cart({ cartList, setcartitems }) {
+    
   const removeItem = (index) => {
     const newCart = [...cartList];
     newCart.splice(index, 1);
@@ -23,7 +24,8 @@ export default function Cart({ cartList, setcartitems }) {
           <div>Total Items :</div>
           <div>{cartList.length}</div>
         </div>
-        <button className="buyNow">Buy Now</button>
+        <button className="buyNow" onClick={()=>{
+            alert("Purchased Successfully");setcartitems([])}}>Buy Now</button>
       </div>
     </div>
   );
