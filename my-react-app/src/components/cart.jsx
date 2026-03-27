@@ -1,10 +1,9 @@
 export default function Cart({ cartList, setcartitems }) {
-    
+
   const removeItem = (index) => {
-    const newCart = [...cartList];
-    newCart.splice(index, 1);
-    setcartitems(newCart);
-  };
+  const newCart = cartList.filter((_, indx) => indx !== index);
+  setcartitems(newCart);
+};
 
   return (
     <div className="cartContainer">

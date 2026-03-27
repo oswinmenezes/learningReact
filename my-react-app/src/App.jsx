@@ -11,8 +11,8 @@ export default function App() {
   const [cartitems, setcartitems] = useState([])
 
   const groceries=["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
-  const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]
-  const electronics=["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank","Table Fan","Ac for csds"] 
+  const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach","Mango"]
+  const electronics=["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank","Table Fan"] 
   
   return <div>
     <Navbar setCartVisibility={setCartVisibility} cartVisibility={cartVisibility} />
