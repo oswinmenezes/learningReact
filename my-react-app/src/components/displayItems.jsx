@@ -1,4 +1,4 @@
-export default function DisplayItems({list,listType}){
+export default function DisplayItems({list,listType,setcartitem}){
     return <div>
         <h1 className="itemListType">{listType}</h1>
         <div className="itemsContainer">
@@ -7,7 +7,7 @@ export default function DisplayItems({list,listType}){
                     return <div key={index} className="itemCard">
                         <div className="itemName">{value}</div>
                         <div className="itemBtns">
-                            <button>Add</button>
+                            <button onClick={setcartitem(value)}>Add</button>
                             <button>Remove</button>
                         </div>
                     </div>

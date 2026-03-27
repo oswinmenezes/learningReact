@@ -8,7 +8,7 @@ import { useState } from "react"
 export default function App() {
   const [category, setCategory] = useState("");
   const [cartVisibility, setCartVisibility] = useState(false);
-  const [cartitems,setcartitems]=useState(["Smartphone", "Laptop", "Headphones", "Power Bank"])
+  const [cartitems,setcartitems]=useState([])
 
   const groceries=["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
   const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]
@@ -19,8 +19,8 @@ export default function App() {
 
     <CardCollection setCategory={setCategory} />
 
-    {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries} /> : null}
-    {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg} /> : null}
+    {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries}  /> : null}
+    {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg}  /> : null}
     {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} /> : null}
 
     {cartVisibility ? <Cart cartList={cartitems}/> : null}

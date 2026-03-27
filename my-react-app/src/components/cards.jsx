@@ -1,5 +1,5 @@
-export default function Card({num,setCategory}){
-    return <div className="Card" onClick={()=>{
-        setCategory(num);
-    }}>{num}</div>
+export default function Card({category,setCategory}){
+    return <div className="Card" onClick={()=>{setCategory(category)}}>
+        {category}
+        </div>
 }
