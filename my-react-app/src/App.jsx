@@ -8,7 +8,7 @@ import { useState } from "react"
 export default function App() {
   const [category, setCategory] = useState("");
   const [cartVisibility, setCartVisibility] = useState(false);
-  const [cartitems,setcartitems]=useState([])
+  const [cartitems, setcartitems] = useState([])
 
   const groceries=["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
   const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]
@@ -19,11 +19,11 @@ export default function App() {
 
     <CardCollection setCategory={setCategory} />
 
-    {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries}  /> : null}
-    {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg}  /> : null}
-    {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} /> : null}
+    {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries} cartitems={cartitems} setcartitems={setcartitems} /> : null}
+    {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg} cartitems={cartitems} setcartitems={setcartitems} /> : null}
+    {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} cartitems={cartitems} setcartitems={setcartitems} /> : null}
 
-    {cartVisibility ? <Cart cartList={cartitems}/> : null}
+    {cartVisibility ? <Cart cartList={cartitems} setcartitems={setcartitems} /> : null}
     <Footer />
   </div>
 }
