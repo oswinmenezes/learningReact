@@ -1,4 +1,4 @@
-export default function Cart({cartList}){
+export default function Cart({cartList}){  
     return <div className="cartContainer">
         <div className="cart">
             <p>My Cart :</p>

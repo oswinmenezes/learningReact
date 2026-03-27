@@ -1,8 +1,8 @@
-export default function Navbar({setCartVisibility}){
+export default function Navbar({setCartVisibility,cartVisibility}){
     return <div className="navbar">
         <div>Shop4u</div>
         <button className="cartBtn" onClick={()=>{
-            setCartVisibility(true);
+            setCartVisibility(!cartVisibility);
             console.log("cart set to visible")
         }}>Cart</button>
     </div>

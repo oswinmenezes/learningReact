@@ -5,16 +5,25 @@ import Cart from "./components/cart"
 import Footer from "./components/footer"
 import { useState } from "react"
 
-export default  function App(){
-  const [category,setCategory]=useState("");
-  const [cartVisibility,setCartVisibility]=useState(false);
+export default function App() {
+  const [category, setCategory] = useState("");
+  const [cartVisibility, setCartVisibility] = useState(false);
+  const [cartitems,setcartitems]=useState(["Smartphone", "Laptop", "Headphones", "Power Bank"])
+
+  const groceries=["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
+  const fruitandveg=["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]
+  const electronics=["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank"] 
+  
   return <div>
-    <Navbar setCartVisibility={setCartVisibility}/>
-    <CardCollection setCategory={setCategory} list= {["Groceries", "Electronics", "Fruits and Vegetables"]}/>
-    {category==="Groceries"?<DisplayItems listType={"Groceries"}  list={["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]}/>:null}
-    {category==="Fruits and Vegetables"?<DisplayItems listType={"Fruits and Vegetables"} list={["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach"]}/>:null}
-    {category==="Electronics"?<DisplayItems listType={"Electronics"} list={["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank"]}/>:null}
-    {cartVisibility?<Cart cartList={["Smartphone", "Laptop", "Headphones", "Power Bank"]}/>:null}
+    <Navbar setCartVisibility={setCartVisibility} cartVisibility={cartVisibility} />
+
+    <CardCollection setCategory={setCategory} />
+
+    {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries} /> : null}
+    {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg} /> : null}
+    {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} /> : null}
+
+    {cartVisibility ? <Cart cartList={cartitems}/> : null}
     <Footer />
   </div>
 }

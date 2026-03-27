@@ -1,6 +1,8 @@
 import Card from "./cards";
 
-export default function CardCollection({list,setCategory}) {
+const list=["Groceries", "Electronics", "Fruits and Vegetables"]
+
+export default function CardCollection({setCategory}) {
 
     return (
         <div className="cardCollectionGrid">
