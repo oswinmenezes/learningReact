@@ -13,9 +13,9 @@ function Home() {
     const [cartitems, setcartitems] = useState([])
 
     // Sample data for different product categories
-    const groceries = ["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"]
-    const fruitandveg = ["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach", "Mango"]
-    const electronics = ["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank", "Table Fan"]
+    const groceries = ["Rice", "Milk", "Eggs", "Bread", "Sugar", "Cooking Oil"];
+    const fruitandveg = ["Apple", "Banana", "Carrot", "Tomato", "Potato", "Spinach", "Mango"];
+    const electronics = ["Smartphone", "Laptop", "Headphones", "Smartwatch", "Bluetooth Speaker", "Power Bank", "Table Fan","Ac for csds"];
 
     return (
         <div>
@@ -26,9 +26,9 @@ function Home() {
             <CardCollection setCategory={setCategory} />
 
             {/* Conditionally render product items based on the selected category */}
-            {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries} cartitems={cartitems} setcartitems={setcartitems} /> : null}
-            {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg} cartitems={cartitems} setcartitems={setcartitems} /> : null}
-            {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} cartitems={cartitems} setcartitems={setcartitems} /> : null}
+            {category === "Groceries" ? <DisplayItems listType={"Groceries"} list={groceries} cartitems={cartitems} setCartVisibility={setCartVisibility} setcartitems={setcartitems} /> : null}
+            {category === "Fruits and Vegetables" ? <DisplayItems listType={"Fruits and Vegetables"} list={fruitandveg} setCartVisibility={setCartVisibility} cartitems={cartitems} setcartitems={setcartitems} /> : null}
+            {category === "Electronics" ? <DisplayItems listType={"Electronics"} list={electronics} cartitems={cartitems} setCartVisibility={setCartVisibility} setcartitems={setcartitems} /> : null}
 
             {/* Show cart overlay if cartVisibility is true */}
             {cartVisibility ? <Cart cartList={cartitems} setcartitems={setcartitems} /> : null}
