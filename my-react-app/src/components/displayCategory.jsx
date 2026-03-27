@@ -1,5 +1,3 @@
-import Card from "./cards";
-
 const list=["Groceries", "Electronics", "Fruits and Vegetables"]
 
 export default function CardCollection({setCategory}) {
